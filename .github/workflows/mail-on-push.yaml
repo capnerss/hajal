@@ -18,5 +18,5 @@ jobs:
 
           Hot single kommiting: ${{github.event.pusher.name}}
           Chenges:
-        to: "jyri.vaitmaa@techno.ee"
+        to: "capners29@gmail.com"
         from: "Github actions for ${{github.repository}}"
