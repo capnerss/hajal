@@ -9,7 +9,7 @@ jobs:
        with:
         server_Address: smtp.gmail.com
         server_port: 587
-        username: ${{secret.MAIL_USERNAME}}
+        username: ${{secrets.MAIL_USERNAME}}
         password: ${{secrets.MAIL_PASSWORD}}
         subject: "ALERT, we have dected a commit ${{github.repository}}"
         body: |
