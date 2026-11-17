@@ -1,0 +1,22 @@
+on:
+  push:
+jobs:
+  mail_on_push:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Send email to this adress
+       uses: dawidd6/action-send-mail@v3
+       with:
+        server_Address: smtp.gmail.com
+        server_port: 587
+        username: ${{secret.MAIL_USERNAME}}
+        password: ${{secrets.MAIL_PASSWORD}}
+        subject: "ALERT, we have dected a commit ${{github.repository}}"
+        body: |
+          helo teem,
+          Ahot single komit hes been ditekted in yo are. Ples rewiwv chenges.
+
+          Hot single kommiting: ${{github.event.pusher.name}}
+          Chenges:
+        to: "jyri.vaitmaa@techno.ee"
+        from: "Github actions for ${{github.repository}}"
